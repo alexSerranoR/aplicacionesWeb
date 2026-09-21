@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    front-family: Arial, sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    aling-items: center;
+
+    padding: 15px 40px;
+
+    background-color: #14cde6;
+    color: white;
+}
+
+.menu > li {
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    aling-items: center;
+
+    padding: 15px 40px;
+
+    background-color: #14cde6;
+    color: white;
+}
