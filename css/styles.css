@@ -29,3 +29,9 @@ footer{
     background-color: #14cde6;
     color: white;
 }
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
