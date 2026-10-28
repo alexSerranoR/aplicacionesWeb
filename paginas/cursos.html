@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Para que la página se vea bien en móviles (diseño responsive) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cursos | Centro de formación</title>
+
+        <!-- Hoja de estilos común a toda la aplicación -->
+        <link rel="stylesheet" href="../css/styles.css">
+
+        <!-- Favicon -->
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+
+        <!-- JavaScript externo (con defer se ejecuta cuando el HTML ya se ha cargado) -->
+        <script src="../js/main.js" defer></script>
+    </head>
+
+    <body>
+
+        <!-- ====================================== -->
+        <!-- CABECERA                               -->
+        <!-- ====================================== -->
+
+        <header class="cabecera">
+            <a href="../index.html" class="logo">
+                <img src="../img/logo.svg" alt="Logotipo del Centro de formación">
+                <div>
+                    <p class="logo-titulo">Centro de formación</p>
+                    <p class="logo-lema">Aprende hoy, crece mañana</p>
+                </div>
+            </a>
+
+            <!-- Accesos públicos: iniciar sesión y registrarse -->
+            <div class="acceso">
+                <a href="login.html" class="boton boton-secundario">Iniciar sesión</a>
+                <a href="registro.html" class="boton">Registrarse</a>
+            </div>
+        </header>
+
+        <!-- ====================================== -->
+        <!-- MENÚ DE NAVEGACIÓN (igual en todas)    -->
+        <!-- ====================================== -->
+
+        <nav aria-label="Menú principal">
+            <ul class="menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="cursos.html" class="activo" aria-current="page">Cursos</a></li>
+                <li><a href="docentes.html">Docentes</a></li>
+                <li><a href="aulas.html">Aulas</a></li>
+                <li><a href="mis-matriculas.html">Mis matrículas</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                <li><a href="administracion.html">Administración</a></li>
+                <li><a href="cerrar-sesion.html">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+
+        <!-- ====================================== -->
+        <!-- CONTENIDO PRINCIPAL                    -->
+        <!-- ====================================== -->
+
+        <main>
+            <h1>Catálogo de cursos</h1>
+            <p>Estos son los cursos que ofrece el centro este cuatrimestre.</p>
+
+            <!-- Buscador y filtro (de momento solo visual; funcionarán en el siguiente microhito) -->
+            <form class="filtros" action="#" method="get">
+                <div>
+                    <label for="buscar">Buscar curso</label>
+                    <input type="search" id="buscar" name="buscar" placeholder="Nombre del curso">
+                </div>
+
+                <div>
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado">
+                        <option value="todos">Todos</option>
+                        <option value="activo">Activo</option>
+                        <option value="completo">Completo</option>
+                    </select>
+                </div>
+            </form>
+
+            <!-- Listado de cursos en tarjetas (contenido de ejemplo) -->
+            <div class="tarjetas">
+                <article class="tarjeta">
+                    <img src="../img/cursos/web.svg" alt="Cartel del curso de HTML y CSS" class="tarjeta-imagen">
+                    <h2>Desarrollo web con HTML y CSS</h2>
+                    <p>Aprende a crear páginas web desde cero.</p>
+                    <p><strong>Docente:</strong> Laura Gómez</p>
+                    <p><strong>Plazas:</strong> 20</p>
+                    <a href="detalle-curso.html" class="boton">Ver detalle</a>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="../img/cursos/javascript.svg" alt="Cartel del curso de JavaScript" class="tarjeta-imagen">
+                    <h2>Introducción a JavaScript</h2>
+                    <p>Primeros pasos en la programación del navegador.</p>
+                    <p><strong>Docente:</strong> Carlos Ruiz</p>
+                    <p><strong>Plazas:</strong> 15</p>
+                    <a href="detalle-curso.html" class="boton">Ver detalle</a>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="../img/cursos/diseno.svg" alt="Cartel del curso de diseño gráfico" class="tarjeta-imagen">
+                    <h2>Diseño gráfico básico</h2>
+                    <p>Conceptos básicos de color, tipografía y composición.</p>
+                    <p><strong>Docente:</strong> Marta López</p>
+                    <p><strong>Plazas:</strong> 18</p>
+                    <a href="detalle-curso.html" class="boton">Ver detalle</a>
+                </article>
+
+                <article class="tarjeta">
+                    <img src="../img/cursos/ingles.svg" alt="Cartel del curso de inglés B1" class="tarjeta-imagen">
+                    <h2>Inglés B1</h2>
+                    <p>Mejora tu nivel de inglés para el día a día.</p>
+                    <p><strong>Docente:</strong> John Smith</p>
+                    <p><strong>Plazas:</strong> 25</p>
+                    <a href="detalle-curso.html" class="boton">Ver detalle</a>
+                </article>
+            </div>
+        </main>
+
+        <!-- ====================================== -->
+        <!-- PIE DE PÁGINA                          -->
+        <!-- ====================================== -->
+
+        <footer>
+            <p>&copy; 2026 NICO &amp; ALEX. Todos los derechos reservados.</p>
+
+            <ul class="redes" aria-label="Redes sociales">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">X / Twitter</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

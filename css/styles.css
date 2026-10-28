@@ -1,31 +1,589 @@
-body{
+/* ==========================================================
+   HOJA DE ESTILOS PRINCIPAL - Centro de formación
+   Se usa en TODAS las páginas para que el diseño sea igual.
+   Está hecha "mobile first": primero los estilos para móvil
+   y al final, con media queries, los cambios para tablet y
+   escritorio.
+   ========================================================== */
+
+
+/* ---------- 1. ESTILOS GENERALES ---------- */
+
+/* Hace que el padding y el borde se incluyan en el ancho (modelo de caja) */
+* {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
-    front-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #0F172A;
+    background-color: #F8FAFC;
 }
 
-nav{
+/* Las imágenes nunca se salen de su contenedor (imágenes responsive) */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: #2563EB;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+
+/* ---------- 2. CABECERA ---------- */
+
+/* Flexbox: logo a un lado y botones de acceso al otro */
+.cabecera {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    aling-items: center;
-
-    padding: 15px 40px;
-
-    background-color: #14cde6;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #0F172A;
     color: white;
 }
 
-.menu > li {
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: white;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 50px;
+}
+
+/* Quitamos el margen por defecto de los párrafos del logo */
+.logo p {
+    margin: 0;
+}
+
+.logo-titulo {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.logo-lema {
+    font-size: 0.9rem;
+    color: #CBD5E1;
+}
+
+.acceso {
+    display: flex;
+    gap: 0.5rem;
+}
+
+
+/* ---------- 3. MENÚ DE NAVEGACIÓN ---------- */
+
+nav {
+    background-color: #2563EB;
+}
+
+/* La lista del menú se coloca con Flexbox y salta de línea si no cabe */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    padding: 0.75rem 0.9rem;
+    color: white;
+    text-decoration: none;
+}
+
+/* Al pasar el ratón o al llegar con el teclado (tabulador) */
+.menu a:hover,
+.menu a:focus {
+    background-color: #1D4ED8;
+}
+
+/* Página en la que estamos ahora mismo */
+.menu a.activo {
+    background-color: #0F172A;
+    font-weight: bold;
+}
+
+
+/* ---------- 4. CONTENIDO PRINCIPAL ---------- */
+
+main {
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+/* Bloque de bienvenida de la página de inicio */
+.hero {
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    background-color: #2563EB;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    margin-top: 0;
+}
+
+/* Imagen del hero: en móvil va debajo del texto */
+.hero img {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 1.5rem;
+    border-radius: 12px;
+}
+
+/* Caja blanca genérica para agrupar contenido */
+.bloque {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ---------- 5. TARJETAS (Grid) ---------- */
+
+/* En móvil: una sola columna */
+.tarjetas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.tarjeta {
+    /* Las palabras muy largas (como los correos) se parten para no salirse */
+    overflow-wrap: anywhere;
+    padding: 1.25rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta h2,
+.tarjeta h3 {
+    margin-top: 0;
+    color: #2563EB;
+}
+
+/* Imagen superior de las tarjetas de cursos */
+.tarjeta-imagen {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+/* Tarjetas de docentes: foto redonda y texto centrado */
+.docente {
+    text-align: center;
+}
+
+.foto-docente {
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* Imagen del detalle del curso */
+.detalle-imagen {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+}
+
+/* Tarjetas de estadísticas: número grande y centrado */
+.indicador {
+    text-align: center;
+}
+
+.numero {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #F97316;
+}
+
+
+/* ---------- 6. BOTONES ---------- */
+
+.boton {
     display: inline-block;
-    margin-right: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #2563EB;
+    border-radius: 8px;
+    background-color: #2563EB;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-footer{
-    display: flex;
-    justify-content: space-between;
-    aling-items: center;
+.boton:hover,
+.boton:focus {
+    background-color: #1D4ED8;
+    border-color: #1D4ED8;
+}
 
-    padding: 15px 40px;
+/* Botón con fondo transparente */
+.boton-secundario {
+    background-color: transparent;
+    border-color: white;
+}
 
-    background-color: #14cde6;
+/* Botón blanco (para fondos azules) */
+.boton-claro {
+    background-color: white;
+    border-color: white;
+    color: #2563EB;
+}
+
+.boton-claro:hover,
+.boton-claro:focus {
+    background-color: #F8FAFC;
+    color: #1D4ED8;
+}
+
+/* Botones pequeños de las tablas */
+.boton-pequeno {
+    padding: 0.3rem 0.6rem;
+    border: 1px solid #2563EB;
+    border-radius: 6px;
+    background-color: white;
+    color: #2563EB;
+    cursor: pointer;
+}
+
+.boton-peligro {
+    border-color: #DC2626;
+    color: #DC2626;
+}
+
+
+/* ---------- 7. TABLAS ---------- */
+
+/* Si la tabla es más ancha que la pantalla, se puede desplazar en horizontal */
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+caption {
+    padding: 0.5rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 0.6rem;
+    border-bottom: 1px solid #CBD5E1;
+    text-align: left;
+}
+
+th {
+    background-color: #0F172A;
     color: white;
+}
+
+
+/* ---------- 8. FORMULARIOS ---------- */
+
+/* Caja centrada para formularios sencillos (login, registro, perfil...) */
+.formulario-caja {
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.formulario-caja h1 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+/* Borde azul cuando el campo está seleccionado */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #2563EB;
+    outline: 2px solid #2563EB;
+}
+
+/* Los radio y checkbox no ocupan todo el ancho */
+.opcion {
+    font-weight: normal;
+}
+
+.opcion input {
+    width: auto;
+}
+
+fieldset {
+    margin-bottom: 1rem;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+form .boton {
+    margin-top: 1rem;
+}
+
+/* Formulario de los paneles de gestión: rejilla (Grid) */
+.formulario-rejilla {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 1rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Buscador y filtro del catálogo */
+.filtros {
+    display: flex;
+    flex-direction: column;
+    gap: 0 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.filtros div {
+    width: 100%;
+}
+
+/* Lista de definiciones del detalle del curso */
+.detalle dt {
+    font-weight: bold;
+    color: #2563EB;
+}
+
+.detalle dd {
+    margin: 0 0 0.75rem 0;
+}
+
+
+/* ---------- 9. PANEL DE ADMINISTRACIÓN ---------- */
+
+/* En móvil: el menú lateral va arriba y el contenido debajo */
+.contenedor-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.lateral {
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.lateral h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.lateral ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lateral a {
+    display: block;
+    padding: 0.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.lateral a:hover,
+.lateral a:focus,
+.lateral a.activo {
+    background-color: #2563EB;
+    color: white;
+}
+
+.contenido-admin h1 {
+    margin-top: 0;
+}
+
+
+/* ---------- 10. PIE DE PÁGINA ---------- */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #0F172A;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+.redes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.redes a {
+    color: #CBD5E1;
+}
+
+
+/* ==========================================================
+   DISEÑO RESPONSIVE (media queries)
+   ========================================================== */
+
+/* ---------- TABLET: a partir de 768px ---------- */
+@media (min-width: 768px) {
+
+    main {
+        padding: 1.5rem 2rem;
+    }
+
+    /* Hero: texto a la izquierda e imagen a la derecha */
+    .hero {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .hero-texto {
+        width: 55%;
+    }
+
+    .hero img {
+        width: 45%;
+        margin-top: 0;
+    }
+
+    /* Dos tarjetas por fila */
+    .tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Formularios de gestión en dos columnas */
+    .formulario-rejilla {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Los elementos con esta clase ocupan las dos columnas */
+    .ancho-completo {
+        grid-column: 1 / 3;
+    }
+
+    /* Buscador y filtro en la misma fila */
+    .filtros {
+        flex-direction: row;
+    }
+
+    /* Administración: menú lateral a la izquierda (30%) y contenido a la derecha */
+    .contenedor-admin {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .lateral {
+        width: 30%;
+    }
+
+    .contenido-admin {
+        width: 70%;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* ---------- ESCRITORIO: a partir de 1024px ---------- */
+@media (min-width: 1024px) {
+
+    /* El contenido no se estira demasiado en pantallas grandes */
+    main {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* Cuatro tarjetas por fila */
+    .tarjetas {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* En administración el espacio es menor, así que tres por fila */
+    .contenido-admin .tarjetas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .lateral {
+        width: 25%;
+    }
+
+    .contenido-admin {
+        width: 75%;
+    }
+
+    .hero {
+        padding: 3rem 2rem;
+    }
 }

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Para que la página se vea bien en móviles (diseño responsive) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Accesibilidad | Centro de formación</title>
+
+        <!-- Hoja de estilos común a toda la aplicación -->
+        <link rel="stylesheet" href="../css/styles.css">
+
+        <!-- Favicon -->
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+
+        <!-- JavaScript externo (con defer se ejecuta cuando el HTML ya se ha cargado) -->
+        <script src="../js/main.js" defer></script>
+    </head>
+
+    <body>
+
+        <!-- ====================================== -->
+        <!-- CABECERA                               -->
+        <!-- ====================================== -->
+
+        <header class="cabecera">
+            <a href="../index.html" class="logo">
+                <img src="../img/logo.svg" alt="Logotipo del Centro de formación">
+                <div>
+                    <p class="logo-titulo">Centro de formación</p>
+                    <p class="logo-lema">Aprende hoy, crece mañana</p>
+                </div>
+            </a>
+
+            <!-- Accesos públicos: iniciar sesión y registrarse -->
+            <div class="acceso">
+                <a href="login.html" class="boton boton-secundario">Iniciar sesión</a>
+                <a href="registro.html" class="boton">Registrarse</a>
+            </div>
+        </header>
+
+        <!-- ====================================== -->
+        <!-- MENÚ DE NAVEGACIÓN (igual en todas)    -->
+        <!-- ====================================== -->
+
+        <nav aria-label="Menú principal">
+            <ul class="menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="docentes.html">Docentes</a></li>
+                <li><a href="aulas.html">Aulas</a></li>
+                <li><a href="mis-matriculas.html">Mis matrículas</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="accesibilidad.html" class="activo" aria-current="page">Accesibilidad</a></li>
+                <li><a href="administracion.html">Administración</a></li>
+                <li><a href="cerrar-sesion.html">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+
+        <!-- ====================================== -->
+        <!-- CONTENIDO PRINCIPAL                    -->
+        <!-- ====================================== -->
+
+        <main>
+            <section class="formulario-caja">
+                <h1>Accesibilidad</h1>
+                <p>Elige cómo quieres ver la aplicación. Estas opciones se activarán en próximos microhitos.</p>
+
+                <form action="#" method="get">
+                    <fieldset>
+                        <legend>Tema</legend>
+                        <label class="opcion"><input type="radio" name="tema" value="claro" checked> Claro</label>
+                        <label class="opcion"><input type="radio" name="tema" value="oscuro"> Oscuro</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Tamaño de fuente</legend>
+                        <label for="tamano">Tamaño</label>
+                        <select id="tamano" name="tamano">
+                            <option value="normal">Normal</option>
+                            <option value="grande">Grande</option>
+                            <option value="muy-grande">Muy grande</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Contraste</legend>
+                        <label class="opcion"><input type="checkbox" name="contraste" value="alto"> Alto contraste</label>
+                    </fieldset>
+
+                    <button type="submit" class="boton">Guardar preferencias</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- ====================================== -->
+        <!-- PIE DE PÁGINA                          -->
+        <!-- ====================================== -->
+
+        <footer>
+            <p>&copy; 2026 NICO &amp; ALEX. Todos los derechos reservados.</p>
+
+            <ul class="redes" aria-label="Redes sociales">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">X / Twitter</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

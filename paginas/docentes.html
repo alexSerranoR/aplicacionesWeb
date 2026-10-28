@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Para que la página se vea bien en móviles (diseño responsive) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Docentes | Centro de formación</title>
+
+        <!-- Hoja de estilos común a toda la aplicación -->
+        <link rel="stylesheet" href="../css/styles.css">
+
+        <!-- Favicon -->
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+
+        <!-- JavaScript externo (con defer se ejecuta cuando el HTML ya se ha cargado) -->
+        <script src="../js/main.js" defer></script>
+    </head>
+
+    <body>
+
+        <!-- ====================================== -->
+        <!-- CABECERA                               -->
+        <!-- ====================================== -->
+
+        <header class="cabecera">
+            <a href="../index.html" class="logo">
+                <img src="../img/logo.svg" alt="Logotipo del Centro de formación">
+                <div>
+                    <p class="logo-titulo">Centro de formación</p>
+                    <p class="logo-lema">Aprende hoy, crece mañana</p>
+                </div>
+            </a>
+
+            <!-- Accesos públicos: iniciar sesión y registrarse -->
+            <div class="acceso">
+                <a href="login.html" class="boton boton-secundario">Iniciar sesión</a>
+                <a href="registro.html" class="boton">Registrarse</a>
+            </div>
+        </header>
+
+        <!-- ====================================== -->
+        <!-- MENÚ DE NAVEGACIÓN (igual en todas)    -->
+        <!-- ====================================== -->
+
+        <nav aria-label="Menú principal">
+            <ul class="menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="docentes.html" class="activo" aria-current="page">Docentes</a></li>
+                <li><a href="aulas.html">Aulas</a></li>
+                <li><a href="mis-matriculas.html">Mis matrículas</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                <li><a href="administracion.html">Administración</a></li>
+                <li><a href="cerrar-sesion.html">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+
+        <!-- ====================================== -->
+        <!-- CONTENIDO PRINCIPAL                    -->
+        <!-- ====================================== -->
+
+        <main>
+            <h1>Docentes</h1>
+            <p>Profesorado que imparte los cursos del centro.</p>
+
+            <div class="tarjetas">
+                <article class="tarjeta docente">
+                    <img src="../img/docentes/laura-gomez.svg" alt="Fotografía de Laura Gómez" class="foto-docente">
+                    <h2>Laura Gómez</h2>
+                    <p><strong>Especialidad:</strong> Desarrollo web</p>
+                    <p><strong>Correo:</strong> laura.gomez@centroformacion.es</p>
+                </article>
+
+                <article class="tarjeta docente">
+                    <img src="../img/docentes/carlos-ruiz.svg" alt="Fotografía de Carlos Ruiz" class="foto-docente">
+                    <h2>Carlos Ruiz</h2>
+                    <p><strong>Especialidad:</strong> Programación</p>
+                    <p><strong>Correo:</strong> carlos.ruiz@centroformacion.es</p>
+                </article>
+
+                <article class="tarjeta docente">
+                    <img src="../img/docentes/marta-lopez.svg" alt="Fotografía de Marta López" class="foto-docente">
+                    <h2>Marta López</h2>
+                    <p><strong>Especialidad:</strong> Diseño gráfico</p>
+                    <p><strong>Correo:</strong> marta.lopez@centroformacion.es</p>
+                </article>
+
+                <article class="tarjeta docente">
+                    <img src="../img/docentes/john-smith.svg" alt="Fotografía de John Smith" class="foto-docente">
+                    <h2>John Smith</h2>
+                    <p><strong>Especialidad:</strong> Idiomas</p>
+                    <p><strong>Correo:</strong> john.smith@centroformacion.es</p>
+                </article>
+            </div>
+        </main>
+
+        <!-- ====================================== -->
+        <!-- PIE DE PÁGINA                          -->
+        <!-- ====================================== -->
+
+        <footer>
+            <p>&copy; 2026 NICO &amp; ALEX. Todos los derechos reservados.</p>
+
+            <ul class="redes" aria-label="Redes sociales">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">X / Twitter</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Para que la página se vea bien en móviles (diseño responsive) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Estadísticas | Centro de formación</title>
+
+        <!-- Hoja de estilos común a toda la aplicación -->
+        <link rel="stylesheet" href="../css/styles.css">
+
+        <!-- Favicon -->
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+
+        <!-- JavaScript externo (con defer se ejecuta cuando el HTML ya se ha cargado) -->
+        <script src="../js/main.js" defer></script>
+    </head>
+
+    <body>
+
+        <!-- ====================================== -->
+        <!-- CABECERA                               -->
+        <!-- ====================================== -->
+
+        <header class="cabecera">
+            <a href="../index.html" class="logo">
+                <img src="../img/logo.svg" alt="Logotipo del Centro de formación">
+                <div>
+                    <p class="logo-titulo">Centro de formación</p>
+                    <p class="logo-lema">Aprende hoy, crece mañana</p>
+                </div>
+            </a>
+
+            <!-- Accesos públicos: iniciar sesión y registrarse -->
+            <div class="acceso">
+                <a href="login.html" class="boton boton-secundario">Iniciar sesión</a>
+                <a href="registro.html" class="boton">Registrarse</a>
+            </div>
+        </header>
+
+        <!-- ====================================== -->
+        <!-- MENÚ DE NAVEGACIÓN (igual en todas)    -->
+        <!-- ====================================== -->
+
+        <nav aria-label="Menú principal">
+            <ul class="menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="docentes.html">Docentes</a></li>
+                <li><a href="aulas.html">Aulas</a></li>
+                <li><a href="mis-matriculas.html">Mis matrículas</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                <li><a href="administracion.html" class="activo" aria-current="page">Administración</a></li>
+                <li><a href="cerrar-sesion.html">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+
+        <!-- ====================================== -->
+        <!-- CONTENIDO PRINCIPAL                    -->
+        <!-- ====================================== -->
+
+        <main>
+            <!-- Contenedor con dos columnas: menú lateral + contenido -->
+            <div class="contenedor-admin">
+
+                <!-- Menú lateral del panel de administración -->
+                <aside class="lateral" aria-label="Menú de administración">
+                    <h2>Administración</h2>
+                    <ul>
+                    <li><a href="administracion.html">Panel principal</a></li>
+                    <li><a href="admin-cursos.html">Gestión de cursos</a></li>
+                    <li><a href="admin-docentes.html">Gestión de docentes</a></li>
+                    <li><a href="admin-aulas.html">Gestión de aulas</a></li>
+                    <li><a href="admin-usuarios.html">Gestión de usuarios</a></li>
+                    <li><a href="admin-matriculas.html">Gestión de matrículas</a></li>
+                    <li><a href="admin-importar.html">Importar datos (JSON)</a></li>
+                    <li><a href="admin-estadisticas.html" class="activo" aria-current="page">Estadísticas</a></li>
+                    </ul>
+                </aside>
+
+                <section class="contenido-admin">
+                    <h1>Estadísticas</h1>
+                    <p>Indicadores de la actividad del centro (datos de ejemplo).</p>
+
+                    <!-- Indicadores principales en tarjetas -->
+                    <div class="tarjetas">
+                        <article class="tarjeta indicador">
+                            <h2>Alumnos</h2>
+                            <p class="numero">120</p>
+                        </article>
+                        <article class="tarjeta indicador">
+                            <h2>Cursos</h2>
+                            <p class="numero">4</p>
+                        </article>
+                        <article class="tarjeta indicador">
+                            <h2>Docentes</h2>
+                            <p class="numero">4</p>
+                        </article>
+                        <article class="tarjeta indicador">
+                            <h2>Aulas</h2>
+                            <p class="numero">3</p>
+                        </article>
+                    </div>
+
+                    <h2>Cursos con más matriculados</h2>
+                    <ol>
+                        <li>Inglés B1 (25 alumnos)</li>
+                        <li>Desarrollo web con HTML y CSS (20 alumnos)</li>
+                        <li>Diseño gráfico básico (18 alumnos)</li>
+                    </ol>
+
+                    <h2>Ocupación media de las aulas</h2>
+                    <p>75 %</p>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- ====================================== -->
+        <!-- PIE DE PÁGINA                          -->
+        <!-- ====================================== -->
+
+        <footer>
+            <p>&copy; 2026 NICO &amp; ALEX. Todos los derechos reservados.</p>
+
+            <ul class="redes" aria-label="Redes sociales">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">X / Twitter</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

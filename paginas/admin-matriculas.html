@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Para que la página se vea bien en móviles (diseño responsive) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestión de matrículas | Centro de formación</title>
+
+        <!-- Hoja de estilos común a toda la aplicación -->
+        <link rel="stylesheet" href="../css/styles.css">
+
+        <!-- Favicon -->
+        <link rel="icon" href="../img/favicon.png" type="image/png">
+
+        <!-- JavaScript externo (con defer se ejecuta cuando el HTML ya se ha cargado) -->
+        <script src="../js/main.js" defer></script>
+    </head>
+
+    <body>
+
+        <!-- ====================================== -->
+        <!-- CABECERA                               -->
+        <!-- ====================================== -->
+
+        <header class="cabecera">
+            <a href="../index.html" class="logo">
+                <img src="../img/logo.svg" alt="Logotipo del Centro de formación">
+                <div>
+                    <p class="logo-titulo">Centro de formación</p>
+                    <p class="logo-lema">Aprende hoy, crece mañana</p>
+                </div>
+            </a>
+
+            <!-- Accesos públicos: iniciar sesión y registrarse -->
+            <div class="acceso">
+                <a href="login.html" class="boton boton-secundario">Iniciar sesión</a>
+                <a href="registro.html" class="boton">Registrarse</a>
+            </div>
+        </header>
+
+        <!-- ====================================== -->
+        <!-- MENÚ DE NAVEGACIÓN (igual en todas)    -->
+        <!-- ====================================== -->
+
+        <nav aria-label="Menú principal">
+            <ul class="menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="docentes.html">Docentes</a></li>
+                <li><a href="aulas.html">Aulas</a></li>
+                <li><a href="mis-matriculas.html">Mis matrículas</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                <li><a href="administracion.html" class="activo" aria-current="page">Administración</a></li>
+                <li><a href="cerrar-sesion.html">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+
+        <!-- ====================================== -->
+        <!-- CONTENIDO PRINCIPAL                    -->
+        <!-- ====================================== -->
+
+        <main>
+            <!-- Contenedor con dos columnas: menú lateral + contenido -->
+            <div class="contenedor-admin">
+
+                <!-- Menú lateral del panel de administración -->
+                <aside class="lateral" aria-label="Menú de administración">
+                    <h2>Administración</h2>
+                    <ul>
+                    <li><a href="administracion.html">Panel principal</a></li>
+                    <li><a href="admin-cursos.html">Gestión de cursos</a></li>
+                    <li><a href="admin-docentes.html">Gestión de docentes</a></li>
+                    <li><a href="admin-aulas.html">Gestión de aulas</a></li>
+                    <li><a href="admin-usuarios.html">Gestión de usuarios</a></li>
+                    <li><a href="admin-matriculas.html" class="activo" aria-current="page">Gestión de matrículas</a></li>
+                    <li><a href="admin-importar.html">Importar datos (JSON)</a></li>
+                    <li><a href="admin-estadisticas.html">Estadísticas</a></li>
+                    </ul>
+                </aside>
+
+                <section class="contenido-admin">
+                    <h1>Gestión de matrículas</h1>
+
+                    <h2>Listado de matrículas</h2>
+                    <div class="tabla-contenedor">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Alumno</th>
+                                    <th scope="col">Curso</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ana Martín</td>
+                                    <td>Desarrollo web con HTML y CSS</td>
+                                    <td>20/10/2026</td>
+                                    <td>Activa</td>
+                                    <td><button type="button" class="boton-pequeno boton-peligro">Cancelar</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Pedro Sanz</td>
+                                    <td>Inglés B1</td>
+                                    <td>12/10/2026</td>
+                                    <td>Cancelada</td>
+                                    <td>&mdash;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- La fecha y el estado los pondrá la aplicación automáticamente -->
+                    <h2>Nueva matrícula</h2>
+                    <form class="formulario-rejilla" action="#" method="get">
+                        <div>
+                            <label for="mat-alumno">Alumno</label>
+                            <select id="mat-alumno" name="alumno">
+                                <option>Ana Martín</option>
+                                <option>Pedro Sanz</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="mat-curso">Curso</label>
+                            <select id="mat-curso" name="curso">
+                                <option>Desarrollo web con HTML y CSS</option>
+                                <option>Introducción a JavaScript</option>
+                                <option>Inglés B1</option>
+                            </select>
+                        </div>
+                        <div class="ancho-completo">
+                            <button type="submit" class="boton">Matricular</button>
+                        </div>
+                    </form>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- ====================================== -->
+        <!-- PIE DE PÁGINA                          -->
+        <!-- ====================================== -->
+
+        <footer>
+            <p>&copy; 2026 NICO &amp; ALEX. Todos los derechos reservados.</p>
+
+            <ul class="redes" aria-label="Redes sociales">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">X / Twitter</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

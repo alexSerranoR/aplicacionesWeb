@@ -2,111 +2,137 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Centro de formacion</title>
-        <!-- conectar css-->
+        <!-- Para que la página se vea bien en móviles (diseño responsive) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio | Centro de formación</title>
+
+        <!-- Hoja de estilos común a toda la aplicación -->
         <link rel="stylesheet" href="css/styles.css">
 
         <!-- Favicon -->
         <link rel="icon" href="img/favicon.png" type="image/png">
+
+        <!-- JavaScript externo (con defer se ejecuta cuando el HTML ya se ha cargado) -->
+        <script src="js/main.js" defer></script>
     </head>
 
     <body>
 
-        
         <!-- ====================================== -->
         <!-- CABECERA                               -->
         <!-- ====================================== -->
 
-        <header>
-                <div class="logo">
-
-                <img src="img/favicon.png" alt="Logotipo de Visita Madrid">
-
+        <header class="cabecera">
+            <a href="index.html" class="logo">
+                <img src="img/logo.svg" alt="Logotipo del Centro de formación">
                 <div>
-
-                    <h1>Centro de formación</h1>
-                    <p>Nicolas por detrás</p>
-
+                    <p class="logo-titulo">Centro de formación</p>
+                    <p class="logo-lema">Aprende hoy, crece mañana</p>
                 </div>
+            </a>
 
+            <!-- Accesos públicos: iniciar sesión y registrarse -->
+            <div class="acceso">
+                <a href="paginas/login.html" class="boton boton-secundario">Iniciar sesión</a>
+                <a href="paginas/registro.html" class="boton">Registrarse</a>
             </div>
         </header>
 
         <!-- ====================================== -->
-        <!-- MENÚ                                   -->
+        <!-- MENÚ DE NAVEGACIÓN (igual en todas)    -->
         <!-- ====================================== -->
 
-        <nav>
+        <nav aria-label="Menú principal">
             <ul class="menu">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/cursos">Cursos</a></li>
-                <li><a href="/docentes">Docentes</a></li>
-                <li><a href="/aulas">Aulas</a></li>
-                <li><a href="/mis-matriculas">Mis matrículas</a></li>
-                <li><a href="/perfil">Perfil</a></li>
-                <li><a href="/accesibilidad">Accesibilidad</a></li>
-                <li><a href="/administracion">Administración</a></li>
-                <li><a href="/cerrar-sesion">Cerrar sesión</a></li>
+                <li><a href="index.html" class="activo" aria-current="page">Inicio</a></li>
+                <li><a href="paginas/cursos.html">Cursos</a></li>
+                <li><a href="paginas/docentes.html">Docentes</a></li>
+                <li><a href="paginas/aulas.html">Aulas</a></li>
+                <li><a href="paginas/mis-matriculas.html">Mis matrículas</a></li>
+                <li><a href="paginas/perfil.html">Perfil</a></li>
+                <li><a href="paginas/accesibilidad.html">Accesibilidad</a></li>
+                <li><a href="paginas/administracion.html">Administración</a></li>
+                <li><a href="paginas/cerrar-sesion.html">Cerrar sesión</a></li>
             </ul>
         </nav>
 
         <!-- ====================================== -->
-        <!-- CONTENIDO                              -->
+        <!-- CONTENIDO PRINCIPAL                    -->
         <!-- ====================================== -->
 
         <main>
-            <h3>main</h3>
-
-            <article>
-
-                    <img
-                        src="img/visita1.png"
-                        alt="Palacio Real de Madrid">
-
-                    <h3>Palacio Real</h3>
-
+            <!-- Bloque de bienvenida (hero) -->
+            <section class="hero">
+                <div class="hero-texto">
+                    <h1>Bienvenido al Centro de formación</h1>
                     <p>
-                        Conoce la historia y la arquitectura de una de las
-                        residencias reales más impresionantes de Europa.
+                        Consulta nuestra oferta de cursos, conoce a los docentes
+                        y matricúlate de forma sencilla desde cualquier dispositivo.
                     </p>
+                    <a href="paginas/cursos.html" class="boton boton-claro">Ver cursos</a>
+                </div>
+                <img src="img/hero.svg" alt="Ilustración de un aula con pizarra, libros y un portátil">
+            </section>
 
-                    <p><strong>Duración:</strong> 2 horas</p>
-                    <p><strong>Precio:</strong> 12 € por persona</p>
-                    <p><strong>Plazas:</strong> 20</p>
+            <!-- Accesos rápidos a las secciones principales -->
+            <section>
+                <h2>¿Qué puedes hacer?</h2>
 
-                    <button type="button">Reservar visita</button>
+                <div class="tarjetas">
+                    <article class="tarjeta">
+                        <h3>Consultar cursos</h3>
+                        <p>Revisa el catálogo de cursos disponibles y su información.</p>
+                        <a href="paginas/cursos.html" class="boton">Ir a cursos</a>
+                    </article>
 
-                </article>
+                    <article class="tarjeta">
+                        <h3>Conocer a los docentes</h3>
+                        <p>Descubre quién imparte cada curso y su especialidad.</p>
+                        <a href="paginas/docentes.html" class="boton">Ir a docentes</a>
+                    </article>
+
+                    <article class="tarjeta">
+                        <h3>Ver las aulas</h3>
+                        <p>Consulta los espacios del centro y su equipamiento.</p>
+                        <a href="paginas/aulas.html" class="boton">Ir a aulas</a>
+                    </article>
+
+                    <article class="tarjeta">
+                        <h3>Gestionar tus matrículas</h3>
+                        <p>Consulta tus cursos activos y tu historial.</p>
+                        <a href="paginas/mis-matriculas.html" class="boton">Mis matrículas</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Información general del centro -->
+            <section class="bloque">
+                <h2>Sobre el centro</h2>
+                <p>
+                    Somos un centro de formación que ofrece cursos presenciales en
+                    distintas áreas: programación, diseño, idiomas y ofimática.
+                </p>
+                <ul>
+                    <li><strong>Dirección:</strong> Calle Ejemplo 123, Madrid</li>
+                    <li><strong>Horario:</strong> lunes a viernes, de 9:00 a 21:00</li>
+                    <li><strong>Correo:</strong> <a href="mailto:info@centroformacion.es">info@centroformacion.es</a></li>
+                </ul>
+            </section>
         </main>
 
-        
         <!-- ====================================== -->
-        <!-- PIE                                    -->
+        <!-- PIE DE PÁGINA                          -->
         <!-- ====================================== -->
 
         <footer>
-             <p>
-                © 2026 NICO&ALEX.
-                Todos los derechos reservados.
-            </p>
+            <p>&copy; 2026 NICO &amp; ALEX. Todos los derechos reservados.</p>
 
-            <p aria-label="Redes sociales">
-                <a href="#" aria-label="Instagram">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                &nbsp;
-                <a href="#" aria-label="Facebook">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                &nbsp;
-                <a href="#" aria-label="X / Twitter">
-                    <i class="bi bi-twitter-x"></i>
-                </a>
-                &nbsp;
-                <a href="#" aria-label="YouTube">
-                    <i class="bi bi-youtube"></i>
-                </a>
-            </p>
+            <ul class="redes" aria-label="Redes sociales">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">X / Twitter</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
         </footer>
     </body>
 </html>
